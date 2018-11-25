@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package datepackageexample;
+// date in diff package
+message Date {
+    int32 day=1;
+    int32 month=2;
+    int32 year=3; 
+  }

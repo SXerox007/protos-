@@ -1,0 +1,10 @@
+/*
+Sytax in proto3 
+*/
+syntax = "proto3";
+
+// simple message example
+message MessageExample {
+    string messageString = 1;
+    int32 content = 2;
+  }

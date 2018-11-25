@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+/*
+Here is the thing if we want to add a list array then we use repeated
+I will use this for my phone_number field a user have multiple phone so i use repeated in this field
+*/
+message UserData {
+  string name = 1;
+  int32 age = 2;
+  repeated string phone_number = 3;
+  Date birthday = 4;
+}
+
+// Here  we use the same level date for our user data 
+message Date {
+  int32 day=1;
+  int32 month=2;
+  int32 year=3; 
+}
