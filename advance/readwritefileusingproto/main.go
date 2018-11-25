@@ -39,7 +39,13 @@ func dummyData() *userdata.UserData {
 func Init() {
 	data := dummyData()
 	log.Println("User Data:-", data)
-	writeFile("readwrite.bin", data)
+	err := writeFile("readwrite.bin", data)
+	if err == nil {
+		err, fileData := readFile("readwrite.bin")
+		if err == nil {
+			log.Println("File Data:-", fileData)
+		}
+	}
 }
 
 func writeFile(filename string, pb proto.Message) error {
@@ -49,4 +55,12 @@ func writeFile(filename string, pb proto.Message) error {
 		log.Println("Write Successfully")
 	}
 	return err
+}
+
+func readFile(filename string) (error, *userdata.UserData) {
+	pb := &userdata.UserData{}
+	arr, err := ioutil.ReadFile(filename)
+	err = proto.Unmarshal(arr, pb)
+	return err, pb
+
 }
