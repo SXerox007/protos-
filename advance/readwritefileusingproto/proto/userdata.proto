@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+message UserData {
+  string name = 1;
+  int32 age = 2;
+  repeated string phone_number = 3;
+  Date birthday = 4;
+  message Address {
+      string address_line1 =1;
+      string address_line2=2;
+      string address_line3=3;
+      string city =4;
+      string country=5;
+  }
+  repeated Address user_address=5;
+}
+
+message Date {
+  int32 day=1;
+  int32 month=2;
+  int32 year=3; 
+}
