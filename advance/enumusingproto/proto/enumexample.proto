@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+
+enum IsSuccessFull {
+    UNKOWN =0;
+    TRUE=1;
+    FALSE=2;
+}
+
+message CompileData {
+  IsSuccessFull check= 1;
+  int32 ErrorCode =2;
+  int32 SuccessCode = 3;
+}

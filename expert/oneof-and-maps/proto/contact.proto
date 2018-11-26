@@ -1,0 +1,22 @@
+syntax="proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+message Contact {
+    string name=1;
+    oneof contact_number {
+        int32 mobile=2;
+        int32 landline=3;
+    }
+    repeated string email =4;
+}
+
+message Dictinory {
+    //fields are second and nano second (UTC)
+    google.protobuf.Timestamp timestamp = 1;
+    //just like timestamp
+    google.protobuf.Duration duration = 2;
+    //Note:- Repeted in map is not valid in proto buf
+    map<string,Contact> Dictinory = 3;
+}
