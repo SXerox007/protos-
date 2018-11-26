@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message SearchRequest {
+    int64 phone_number =1;
+}
+
+message SearchResponse {
+    int64 phone_number = 1;
+    string message = 2;
+    int32 status_code =3;
+}
+
+service CreateService{
+    rpc SearchContact (SearchRequest) returns (SearchResponse);
+}
