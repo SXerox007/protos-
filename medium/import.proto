@@ -19,3 +19,7 @@ message UserData {
   repeated Address user_address=5;
 }
 
+service example {
+  rpc exampleservice(UserData) returns (UserData){};
+}
+
